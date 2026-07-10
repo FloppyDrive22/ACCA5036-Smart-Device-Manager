@@ -1,23 +1,18 @@
-# display.py
-# Functions for displaying smart devices.
+# Display Devices
 
-SEPARATOR = "-" * 30
+from devices import devices
 
 
-def print_devices(devices):
-    """Display all devices in a formatted way."""
+def display_devices():
+    """
+    Display all registered smart devices with
+    their room and current status.
+    """
+
+    print("\n========== Bright Minds Smart Home Hub ==========\n")
 
     for device in devices:
-        print(f"Device Name: {device['name']}")
-        print(f"Room: {device['room']}")
-        print(f"Status: {device['status']}")
-        print(SEPARATOR)
-
-
-
-
-
-
-
-
-
+        print(f"Device : {device['name']}")
+        print(f"Room   : {device['room']}")
+        print(f"Status : {device['status']}")
+        print("-" * 30)

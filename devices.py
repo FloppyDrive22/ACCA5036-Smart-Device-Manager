@@ -1,30 +1,29 @@
-# devices.py
-# This file stores the initial smart device data.
+# Bright Minds Smart Home Hub
 
 devices = [
     {
-        "name": "Smart Light A1",
-        "room": "Room A",
-        "status": "Online"
-    },
-    {
-        "name": "Projector C102",
-        "room": "Room 102",
-        "status": "Offline"
-    },
-    {
-        "name": "Garage Doors",
-        "room": "Garage",
-        "status": "Online"
-    },
-    {
         "name": "Thermostat",
-        "room": "Bedroom",
+        "room": "Living Room",
+        "status": "Online"
+    },
+    {
+        "name": "Garage Door",
+        "room": "Garage",
         "status": "Offline"
     },
     {
-        "name": "Security Camera",
-        "room": "Living Room",
+        "name": "Baby Camera",
+        "room": "Baby's Room",
+        "status": "Online"
+    },
+    {
+        "name": "Smart Light",
+        "room": "Kitchen",
+        "status": "Offline"
+    },
+    {
+        "name": "Outdoor Camera",
+        "room": "Front Door",
         "status": "Online"
     }
 ]

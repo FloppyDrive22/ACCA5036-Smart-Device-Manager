@@ -28,3 +28,7 @@ def add_device(name, room, status):
     devices.append(new_device)
 
     return True
+
+    devices.append(new_device)
+
+    return True

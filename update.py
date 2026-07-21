@@ -1,26 +1,33 @@
-from display import display_devices
+# Update Device Status
+
 from search import search_device
-from update import update_device_status
-from add_device import add_device
 
 
-def pause():
-    input("\nPress Enter to continue...")
+def update_device_status(device_name, new_status):
+    """
+    Update the status of an existing device.
+    Returns True if the update is successful.
+    Returns False if the device is not found
+    or the status is invalid.
+    """
 
+    device = search_device(device_name)
 
-def main():
-    while True:
-        print("\n=========================================")
-        print("      Bright Minds Smart Home Hub")
-        print("=========================================")
-        print("1. View all devices")
-        print("2. Search for a device")
-        print("3. Update device status")
-        print("4. Add a new device")
-        print("5. Exit")
-        print("=========================================")
+    if device is None:
+        return False
 
-        choice = input("Select an option (1-5): ")
+    valid_statuses = [
+        "Online",
+        "Offline",
+        "Under Maintenance"
+    ]
+
+    if new_status not in valid_statuses:
+        return False
+
+    device["status"] = new_status
+
+    return True
 
         if choice == "1":
             display_devices()

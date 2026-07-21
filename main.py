@@ -1,3 +1,4 @@
+
 from display import display_devices
 from search import search_device
 from update import update_device_status

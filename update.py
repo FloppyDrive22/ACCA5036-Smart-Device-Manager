@@ -1,14 +1,13 @@
-# Update Device Status
-
 from search import search_device
 
 
 def update_device_status(device_name, new_status):
     """
     Update the status of an existing device.
-    Returns True if the update is successful.
-    Returns False if the device is not found
-    or the status is invalid.
+
+    Returns:
+        True if the device status is updated successfully.
+        False if the device is not found or the status is invalid.
     """
 
     device = search_device(device_name)
@@ -22,7 +21,14 @@ def update_device_status(device_name, new_status):
         "Under Maintenance"
     ]
 
+    new_status = new_status.strip()
+
     if new_status not in valid_statuses:
+        return False
+
+    device["status"] = new_status
+
+    return True valid_statuses:
         return False
 
     device["status"] = new_status

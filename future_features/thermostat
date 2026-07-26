@@ -7,3 +7,52 @@ This prototype explores a possible future enhancement
 and is not integrated into the final Smart Device Manager
 application.
 """
+
+TEMPERATURE_THRESHOLD = 16
+
+
+def smart_thermostat():
+    """
+    Simulates the proposed Smart Thermostat Notification workflow.
+    """
+
+    temperature = float(input("Enter room temperature (°C): "))
+
+    if temperature >= TEMPERATURE_THRESHOLD:
+        print("Temperature is normal.")
+        return
+
+    print("Smartwatch notification sent.")
+
+    response = input(
+        "Did the user respond within 3 minutes? (yes/no): "
+    ).strip().lower()
+
+    if response == "no":
+        print("Waiting 60 minutes...")
+        print("Resending smartwatch notification.")
+        return
+
+    heating = input(
+        "Would you like to switch the heating ON? (yes/no): "
+    ).strip().lower()
+
+    if heating == "no":
+        print("Heating remains OFF.")
+        return
+
+    pin = input("Enter PIN: ").strip()
+
+    if pin == "2468":
+        print("Thermostat ON.")
+        print("Heating activated successfully.")
+    else:
+        print("Access denied. Incorrect PIN.")
+
+
+def main():
+    smart_thermostat()
+
+
+if __name__ == "__main__":
+    main()

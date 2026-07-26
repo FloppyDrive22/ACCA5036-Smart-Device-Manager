@@ -1,4 +1,4 @@
-from devices import devices
+ffrom devices import devices
 
 
 def search_device(device_name):

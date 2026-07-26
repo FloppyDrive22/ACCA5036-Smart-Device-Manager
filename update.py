@@ -5,9 +5,9 @@ def update_device_status(device_name, new_status):
     """
     Update the status of an existing device.
 
-    Returns:
-        True if the device status is updated successfully.
-        False if the device is not found or the status is invalid.
+    Returns True if the update is successful.
+    Returns False if the device is not found
+    or the status is invalid.
     """
 
     device = search_device(device_name)

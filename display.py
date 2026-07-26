@@ -1,23 +1,18 @@
-# Display Devices
-
 from devices import devices
 
 
-def display_devices():
+def search_device(device_name):
     """
-    Display all registered smart devices with
-    their room and current status.
+    Search for a device by its name.
+    Returns the device dictionary if found.
+    Returns None if the device does not exist.
     """
-
-    print("\n========== Bright Minds Smart Home Hub ==========\n")
 
     for device in devices:
-        print(f"Device : {device['name']}")
-        print(f"Room   : {device['room']}")
-        print(f"Status : {device['status']}")
-        print("-" * 30)
+        if device["name"].lower() == device_name.lower():
+            return device
 
-
+    return None
 
 
 

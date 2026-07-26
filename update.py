@@ -28,6 +28,12 @@ def update_device_status(device_name, new_status):
 
     device["status"] = new_status
 
+    return True
+    if new_status not in valid_statuses:
+        return False
+
+    device["status"] = new_status
+
     return True valid_statuses:
         return False
 

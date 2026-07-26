@@ -20,14 +20,14 @@ def main():
         print("5. Exit")
         print("=========================================")
 
-        choice = input("Select an option (1-5): ")
+        choice = input("Select an option (1-5): ").strip()
 
         if choice == "1":
             display_devices()
             pause()
 
         elif choice == "2":
-            device_name = input("Enter device name: ")
+            device_name = input("Enter device name: ").strip()
             device = search_device(device_name)
 
             if device is None:
@@ -42,8 +42,10 @@ def main():
             pause()
 
         elif choice == "3":
-            device_name = input("Enter device name: ")
-            new_status = input("Enter new status (Online, Offline, Under Maintenance): ")
+            device_name = input("Enter device name: ").strip()
+            new_status = input(
+                "Enter new status (Online, Offline, Under Maintenance): "
+            ).strip()
 
             updated = update_device_status(device_name, new_status)
 
@@ -55,9 +57,11 @@ def main():
             pause()
 
         elif choice == "4":
-            name = input("Enter new device name: ")
-            room = input("Enter room: ")
-            status = input("Enter status (Online, Offline, Under Maintenance): ")
+            name = input("Enter new device name: ").strip()
+            room = input("Enter room: ").strip()
+            status = input(
+                "Enter status (Online, Offline, Under Maintenance): "
+            ).strip()
 
             added = add_device(name, room, status)
 
